@@ -22,6 +22,11 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "settings": {
+      "import/core-modules": [
+        "styled-jsx/css"
+      ]
+    },
     "extends": [
       "react-app",
       "react-app/jest"
