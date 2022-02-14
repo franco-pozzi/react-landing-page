@@ -11,7 +11,7 @@ import {
   ArrowForward,
   ArrowRight,
 } from './HeroElements'
-import { Button } from '../ButtonElements'
+import { ButtonS } from '../ButtonElements'
 
 import Video from '../../videos/video.mp4'
 
@@ -21,7 +21,7 @@ export const HeroSection = () => {
   const onHover = () => setHover(!hover)
 
   return (
-    <HeroContainer>
+    <HeroContainer id="home">
       <HeroBg>
         <VideoBg autoPlay loop muted src={Video} type="videos/mp4" />
       </HeroBg>
@@ -32,15 +32,20 @@ export const HeroSection = () => {
           next payment.
         </HeroP>
         <HeroBtnWrapper>
-          <Button
+          <ButtonS
             to="signup"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"
             dark="true"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-20}
           >
             Get started{hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
+          </ButtonS>
         </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>
