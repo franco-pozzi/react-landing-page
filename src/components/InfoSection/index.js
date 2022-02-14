@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../ButtonElements'
+import { ButtonS, ButtonR } from '../ButtonElements'
 
 import {
   InfoContainer,
@@ -31,7 +31,44 @@ export const InfoSection = ({
   primary,
   dark,
   dark2,
+  goTo,
+  button,
 }) => {
+  const ChoicedButton = () => {
+    if (button === 'router') {
+      return (
+        <ButtonR
+          to={goTo}
+          smooth="true"
+          duration={500}
+          spy="true"
+          exact="true"
+          offset={-20}
+          primary={primary ? 1 : 0}
+          dark={dark ? 1 : 0}
+          dark2={dark2 ? 1 : 0}
+        >
+          {buttonLabel}
+        </ButtonR>
+      )
+    }
+    return (
+      <ButtonS
+        to={goTo}
+        smooth="true"
+        duration={500}
+        spy={true}
+        exact="true"
+        offset={-20}
+        primary={primary ? 1 : 0}
+        dark={dark ? 1 : 0}
+        dark2={dark2 ? 1 : 0}
+      >
+        {buttonLabel}
+      </ButtonS>
+    )
+  }
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -43,19 +80,7 @@ export const InfoSection = ({
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button
-                    to="home"
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
-                  >
-                    {buttonLabel}
-                  </Button>
+                  <ChoicedButton />
                 </BtnWrap>
               </TextWrapper>
             </Column1>
