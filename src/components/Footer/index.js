@@ -15,6 +15,8 @@ import {
   SocialIconLink,
 } from './FooterElements'
 
+import { animateScroll as scroll } from 'react-scroll'
+
 import {
   FaFacebook,
   FaInstagram,
@@ -24,6 +26,10 @@ import {
 } from 'react-icons/fa'
 
 export const Footer = () => {
+  const toggleHome = () => {
+    scroll.scrollToTop()
+  }
+
   return (
     <>
       <FooterContainer>
@@ -68,7 +74,9 @@ export const Footer = () => {
           </FooterLinksContainer>
           <SocialMedia>
             <SocialMediaWrap>
-              <SocialLogo to="/">bank</SocialLogo>
+              <SocialLogo to="/" onClick={toggleHome}>
+                bank
+              </SocialLogo>
               <WebsiteRights>
                 bank {new Date().getFullYear()} All rights reserved.
               </WebsiteRights>
