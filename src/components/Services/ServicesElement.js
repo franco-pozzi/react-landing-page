@@ -11,7 +11,7 @@ export const ServicesContainer = styled.div`
     height: 1000px;
   }
   @media screen and (min-width: 1000px) {
-    height: 800px;
+    height: 860px;
   }
 `
 export const ServicesWrapper = styled.div`

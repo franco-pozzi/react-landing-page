@@ -26,6 +26,8 @@ const Navbar = ({ toggle }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav)
+
+    return () => window.removeEventListener('scroll', changeNav)
   }, [])
 
   const toggleHome = () => {
@@ -51,7 +53,7 @@ const Navbar = ({ toggle }) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-20}
+                offset={-80}
               >
                 About
               </NavLinks>
@@ -63,7 +65,7 @@ const Navbar = ({ toggle }) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-20}
+                offset={-80}
               >
                 Discover
               </NavLinks>
@@ -75,7 +77,7 @@ const Navbar = ({ toggle }) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-20}
+                offset={-80}
               >
                 Services
               </NavLinks>
@@ -87,23 +89,14 @@ const Navbar = ({ toggle }) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-20}
+                offset={-80}
               >
                 Sign Up
               </NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink
-              to="/signin"
-              smooth="true"
-              duration="500"
-              spy="true"
-              exact="true"
-              offset={50}
-            >
-              Sign In
-            </NavBtnLink>
+            <NavBtnLink to="/signin">Sign In</NavBtnLink>
           </NavBtn>
         </NavbarContainer>
       </Nav>

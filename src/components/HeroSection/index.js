@@ -33,7 +33,7 @@ export const HeroSection = () => {
         </HeroP>
         <HeroBtnWrapper>
           <ButtonS
-            to="signup"
+            to="about"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"

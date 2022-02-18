@@ -11,7 +11,7 @@ import {
   FormButton,
   Text,
 } from './SignInElements'
-import { ScrollToTop } from '../ScrollToTop'
+import { ScrollToTop } from '../../components/ScrollToTop'
 
 export const SignIn = () => {
   return (
@@ -19,7 +19,7 @@ export const SignIn = () => {
       <ScrollToTop />
       <Container>
         <FormWrap>
-          <Icon to="/">Dolaa</Icon>
+          <Icon to="/">bank</Icon>
           <FormContent>
             <Form action="#">
               <FormH1>Sign in to your account</FormH1>
